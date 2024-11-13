@@ -11,7 +11,7 @@ dotenv.config();
 
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors({
@@ -55,7 +55,7 @@ app.post("/api/chats", async (req,res)=>{
 
 
         // CHECK IF THE USERCHATS EXISTS
-        const userChats = await userChats.find({ userId:userId });
+        const userChats = await UserChats.find({ userId:userId });
 
         // IF DOESNT EXIST CREATE A NEW ONE AND ADD THE CHAT IN THE CHATS ARRAY
 
@@ -95,6 +95,6 @@ app.post("/api/chats", async (req,res)=>{
 
 app.listen(port,() => {
     connect()
-    console.log("Server running on 3001")
+    console.log("Server running on 3000")
 })
 
