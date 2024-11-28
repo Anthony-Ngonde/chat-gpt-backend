@@ -45,7 +45,8 @@ app.get("/api/upload", (req, res) => {
 });
 
 app.get("/api/test", ClerkExpressRequireAuth(), (req, res) => {
-    console.log("Success");
+    const userId = req.auth.userId
+    console.log(userId);
     res.send("Success!");
 });
 
